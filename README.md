@@ -21,7 +21,7 @@ while (y < 1000):
 ```
 i might find a way around to overcome this problem in a near future. anyway, here's how it's look with watermark.
 
-<img width="419" alt="image" src="https://github.com/yogarn/pdf-tools/assets/144443155/999fafd0-e254-4a30-b03f-3b063041f904">
+![image](https://github.com/yogarn/pdf-tools/assets/144443155/3c3ccefa-107c-4457-bc43-57ad8214d9c6)
 
 to run this program, use ```python main.py -m [mode] -i [input.pdf] -o [output.pdf] -t [text, only required if you using watermark mode]```
 
