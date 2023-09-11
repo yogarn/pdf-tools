@@ -6,7 +6,7 @@ import sign
 parser = argparse.ArgumentParser(description="basic pdf tools using PyMuPDF")
 
 
-parser.add_argument("--mode", "-m", choices=["watermark", "sign", "extract"], help="programs mode, currently available : watermark", required=True)
+parser.add_argument("--mode", "-m", choices=["watermark", "sign", "extract"], help="programs mode, currently available : watermark, signature", required=True)
 parser.add_argument("--input", "-i", help="input file path")
 parser.add_argument("--output", "-o", help="output file path")
 parser.add_argument("--text", "-t", help="used for watermark, extracting text, signature name")
