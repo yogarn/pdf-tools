@@ -3,6 +3,7 @@ programs that contains basic pdf tools using PyMuPDF
 ## what can i do?
 - [x] creating watermark
 - [x] sign pdf using image file
+- [ ] apply to multiple document
 - [ ] extract sentence that contain specific word
 ## how does this work?
 ### creating watermark
