@@ -1,12 +1,12 @@
 import argparse
 import watermark
 import sign
+import img_to_pdf
 
 # create argument parser
 parser = argparse.ArgumentParser(description="basic pdf tools using PyMuPDF")
 
-
-parser.add_argument("--mode", "-m", choices=["watermark", "sign", "extract"], help="programs mode, currently available : watermark, signature", required=True)
+parser.add_argument("--mode", "-m", choices=["watermark", "sign", "merge"], help="programs mode, currently available : watermark, signature", required=True)
 parser.add_argument("--input", "-i", help="input file path")
 parser.add_argument("--output", "-o", help="output file path")
 parser.add_argument("--text", "-t", help="used for watermark, extracting text, signature name")
@@ -27,5 +27,11 @@ elif args.mode == "sign":
         parser.error("Argument '--input', '--output', '--signature', and '--text' required for sign mode")
     else:
         sign.start(args.input, args.output, args.signature, args.text)
+elif args.mode == "merge":
+    # require input and output
+    if args.input is None or args.output is None:
+        parser.error("Argument '--input', '--output', required for merge image to pdf")
+    else:
+        img_to_pdf.merge(args.input, args.output)
 else:
     print(f"Mode: {args.mode}")
