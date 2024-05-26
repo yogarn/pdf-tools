@@ -1,4 +1,4 @@
-from fitz import fitz, Rect
+import fitz
 
 def start(input, output, signature, name):
     # split user input using comma
@@ -16,7 +16,7 @@ def start(input, output, signature, name):
             for inst in text_instances: # loop in case found more than one name or keywords
                 # get name or keywords coordinate and adjust it
                 # change this value if your signature looks awful
-                inst = Rect(inst.x0-20, inst.y0-80, inst.x1, inst.y1-10)
+                inst = fitz.Rect(inst.x0-20, inst.y0-80, inst.x1, inst.y1-10)
                 if not page.is_wrapped:
                     page.wrap_contents()
                 page.insert_image(inst, stream=img) # insert signature image
